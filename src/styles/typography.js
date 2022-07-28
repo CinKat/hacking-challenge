@@ -6,6 +6,10 @@ export const fonts = {
 
 export const typography = {
   title: {
+    d_regular_36: `
+    font-size: 2.25rem;
+    line-height: 3rem;
+    `,
     m_regular_28: `
     font-size: 1.75rem;
     line-height: 2.25rem;
@@ -34,4 +38,11 @@ export const typography = {
     line-height: 1.25rem;
     `,
   },
+
+  button: {
+    button_12: `
+    font-size: 0.75rem;
+    line-height: 1rem;
+    `
+  }
 };

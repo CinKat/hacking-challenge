@@ -75,9 +75,12 @@ export const global = css`
   @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@300;400&display=swap');
   body {
     font-family: ${fonts.primary};
-    padding: 1rem;
-    max-width: 360px;
-    margin: 0 auto;
+    /* padding: 1.25rem 2rem; */
+    /* max-width: 750px; */
+    /* margin: 0 auto; */
     color: ${colors.gray[300]};
+    /* @media (min-width: 600px) {
+      padding: 1.25rem 7.5rem;
+    } */
   }
 `;
