@@ -1,6 +1,6 @@
 export const fonts = {
   primary: `'Lato', sans-serif`,
-  secondary: `Roboto', sans-serif`,
+  secondary: `'Roboto', sans-serif`,
 };
 
 
@@ -42,6 +42,10 @@ export const typography = {
   button: {
     button_12: `
     font-size: 0.75rem;
+    line-height: 1rem;
+    `,
+    button_14: `
+    font-size: 0.875rem;
     line-height: 1rem;
     `
   }

@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import { colors } from "./styles/colors";
 import Background from "./assets/img/background.png";
+import Form from "./components/Form";
 
 function App() {
   return (
@@ -12,9 +13,7 @@ function App() {
         <Container>
           <Hero />
         </Container>
-        <p>
-          Formulario
-        </p>
+        <Form />
       </LoginWrapper>
     </>
   );
@@ -25,6 +24,7 @@ const LoginWrapper = styled.div`
   flex-direction: column;
   @media (min-width: 600px) {
     flex-direction: row;
+    gap: 2rem;
   }
 `
 const Container = styled.div`

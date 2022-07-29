@@ -5,7 +5,18 @@ import { colors } from '../styles/colors';
 import { fonts, typography } from '../styles/typography';
 import Icon from './Icon';
 
-
+const HeaderWrap = styled.header`
+  padding: 1.25rem 2rem;
+  font-family: ${fonts.secondary};
+  /* width: 100%; */
+  height: 3.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media (min-width: 600px) {
+    padding: 1.5rem 7.5rem;
+  }
+`
 const StyleContact = styled.div`
   display: flex;
   align-items: center;
@@ -29,15 +40,7 @@ const StyleQuestion = styled.p`
       ${typography.paragraph.regular_12};
   }
 `
-const HeaderWrap = styled.header`
-  font-family: ${fonts.secondary};
-  width: 100%;
-  height: 3.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.25rem 2rem;
-`
+
 
 
 function Header() {
