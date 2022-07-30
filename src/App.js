@@ -1,42 +1,23 @@
-import styled from "@emotion/styled";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
-import Hero from "./components/Hero";
-import { colors } from "./styles/colors";
-import Background from "./assets/img/background.png";
-import Form from "./components/Form";
+import Login from "./pages/Login";
+
 
 function App() {
 
   return (
     <>
       <Header />
-      <LoginWrapper>
-        <Container>
-          <Hero />
-        </Container>
-        <Form />
-      </LoginWrapper>
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<Navigate to="/login" />} />
+          <Route path="*" element={<Navigate to="/login" />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/armatuplan" element={<p>Arma tu plan</p>} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
-
-const LoginWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  @media (min-width: 600px) {
-    flex-direction: row;
-    gap: 2rem;
-  }
-`
-const Container = styled.div`
-  background-color:${colors.gray[400]};
-  height:19.2rem;
-  /* width: 100%; */
-  @media (min-width: 600px) {
-    background-image:url(${Background});
-    background-repeat: no-repeat;
-    height:100vh;
-  }
-`
 
 export default App;

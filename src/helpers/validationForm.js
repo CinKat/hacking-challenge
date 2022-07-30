@@ -23,7 +23,7 @@ export function validationForm(form) {
   }
 
   if (form.terminos === false) {
-    errors.terminos = "Debe aceptar los terminos y condiciones";
+    errors.terminos = "Debe aceptar la Política de Protecición de Datos y Terminos y condiciones";
   }
 
   return errors;

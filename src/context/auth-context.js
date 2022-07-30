@@ -21,7 +21,10 @@ function AuthProvider({ children }) {
       return { ...element, placa: dataform.placa };
     });
     setCurrentUser(currentuser);
+    return user;
   }
+
+  console.log(currentUser)
 
   return (
     <AuthContext.Provider

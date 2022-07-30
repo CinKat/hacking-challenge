@@ -19,12 +19,23 @@ const SytledCheckbox = styled.input`
   }
 `;
 
+const Link = styled.a`
+  font-family: ${fonts.secondary};
+  ${typography.paragraph.regular_12};
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  color: #676F8F;
+`
+
 function Checkbox({ id, name, label, error, ...rest }) {
   return (
     <>
       <Container>
         <SytledCheckbox type="checkbox" id={id || name} name={name} {...rest} />
-        <label htmlFor={id || name}>{label || name}</label>
+        <label htmlFor={id || name}>
+          Acepto <Link href="#">Políticas de Protección de Datos Personales</Link>
+          y los <Link href="#">Términos y Condiciones</Link></label>
+
       </Container>
       {error && <Error size="sm">{error}</Error>}
     </>

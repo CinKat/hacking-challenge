@@ -15,15 +15,15 @@ function Selects({
       <Select>
         <SelectInput>
           <option value="">DNI</option>
-          <option value="1">Pasaporte</option>
-          <option value="2">DNI</option>
+          <option value="1">RUC</option>
+          <option value="2">CE</option>
         </SelectInput>
         <Input
           placeholder={placeholder}
           id={id}
           name={name}
           {...rest}
-          size="13"
+          size="12"
         />
       </Select>
       {error && <Error size="sm">{error}</Error>}

@@ -61,7 +61,7 @@ function Input({
         size={size}
         {...rest}
       />
-      {error && <Error size="sm">{error}</Error>}
+      {error && <Error>{error}</Error>}
     </InputContainer>
   );
 }

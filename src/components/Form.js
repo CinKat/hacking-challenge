@@ -1,12 +1,13 @@
 import styled from "@emotion/styled";
 import { useState } from "react";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/auth-context";
 import { validationForm } from "../helpers/validationForm";
 import { colors } from "../styles/colors";
 import { typography } from "../styles/typography";
 import Button from "./Button";
 import Checkbox from "./Checkbox";
-import Input from "./Input";
+import Input, { Error } from "./Input";
 import Selects from "./Selects";
 
 const StyledForm = styled.form`
@@ -42,14 +43,15 @@ const CustomButton = styled(Button)`
 `
 
 function Form() {
-  const { filter, currentUser } = useAuth();
+  const { filter } = useAuth();
   const [dataForm, setForm] = useState({
     dni: "",
     celular: "",
     placa: "",
-    terminos: false,
+    terminos: true,
   });
   const [errors, setErrors] = useState({})
+  let navigate = useNavigate();
 
   function handleFormChange(event) {
     const { type, name, value, id, checked } = event.target;
@@ -70,13 +72,17 @@ function Form() {
   function handleSubmit(event) {
     event.preventDefault();
     if (Object.keys(errors).length === 0) {
-      filter(dataForm);
+      let filterData = filter(dataForm);
+      if (filterData.length < 1) {
+        setErrors({ ...errors, form: "Los datos ingresados no son correctos" })
+      } else {
+        navigate("/armatuplan")
+      }
+
     } else {
       return;
     }
   }
-
-  console.log(dataForm)
 
   return (
     <>
@@ -111,13 +117,13 @@ function Form() {
           />
         </InputWrapper>
         <Checkbox
-          label="Acepto la Política de Protecciòn de Datos Personales y los Términos y Condiciones."
           id="terminos"
           checked={dataForm.terminos}
           onChange={handleFormChange}
           onBlur={handleBlur}
           error={errors.terminos}
         />
+        {errors && <Error>{errors.form}</Error>}
         <CustomButton isFullWidth>Cotízalo</CustomButton>
       </StyledForm>
     </>
