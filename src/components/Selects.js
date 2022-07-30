@@ -1,21 +1,41 @@
 import styled from "@emotion/styled";
 import { colors } from "../styles/colors";
 import Chevrot from "../assets/icons/chevrot.svg";
-import Input from "./Input";
+import Input, { Error } from "./Input";
 
-function Selects() {
+function Selects({
+  id,
+  name,
+  error,
+  placeholder,
+  ...rest
+}) {
   return (
-
-    <Select>
-      <SelectInput>
-        <option value="">DNI</option>
-        <option value="1">DNI</option>
-        <option value="2">DNI</option>
-      </SelectInput>
-      <Input placeholder="Nro de doc" id="numero" size="13" />
-    </Select>
+    <SelectWrapper>
+      <Select>
+        <SelectInput>
+          <option value="">DNI</option>
+          <option value="1">Pasaporte</option>
+          <option value="2">DNI</option>
+        </SelectInput>
+        <Input
+          placeholder={placeholder}
+          id={id}
+          name={name}
+          {...rest}
+          size="13"
+        />
+      </Select>
+      {error && <Error size="sm">{error}</Error>}
+    </SelectWrapper>
   )
 }
+
+const SelectWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap:0.5rem;
+`
 
 
 const Select = styled.div`

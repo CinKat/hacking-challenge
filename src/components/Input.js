@@ -33,8 +33,8 @@ const InputContainer = styled.div`
   gap: 0.25rem;
 `;
 
-const Error = styled(Text)`
-  color: red;
+export const Error = styled.p`
+  color: ${colors.red[500]};
   padding-left: 1rem;
 `;
 
