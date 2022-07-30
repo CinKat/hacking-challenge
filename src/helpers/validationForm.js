@@ -12,13 +12,18 @@ export function validationForm(form) {
 
   if (!form.celular.trim()) {
     errors.celular = "El campo Celular es requerido";
-  } else if (!matchCelular.test(form.celular.trim())) {
-    errors.celular = "El campo DNI debe contener 9 digitos";
   }
+  // else if (!matchCelular.test(form.celular.trim())) {
+  //   errors.celular = "El campo DNI debe contener 9 digitos";
+  // }
   if (!form.placa.trim()) {
     errors.placa = "El campo Placa es requerido";
   } else if (!matchPlaca.test(form.placa.trim())) {
     errors.placa = "El numero de placa no es correcto";
+  }
+
+  if (form.terminos === false) {
+    errors.terminos = "Debe aceptar los terminos y condiciones";
   }
 
   return errors;

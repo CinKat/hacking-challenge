@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { colors } from "../styles/colors";
 import { fonts, typography } from "../styles/typography";
+import { Error } from "./Input";
 
 const Container = styled.div`
   display: flex;
@@ -18,12 +19,16 @@ const SytledCheckbox = styled.input`
   }
 `;
 
-function Checkbox({ id, name, label, ...rest }) {
+function Checkbox({ id, name, label, error, ...rest }) {
   return (
-    <Container>
-      <SytledCheckbox type="checkbox" id={id || name} name={name} {...rest} />
-      <label htmlFor={id || name}>{label || name}</label>
-    </Container>
+    <>
+      <Container>
+        <SytledCheckbox type="checkbox" id={id || name} name={name} {...rest} />
+        <label htmlFor={id || name}>{label || name}</label>
+      </Container>
+      {error && <Error size="sm">{error}</Error>}
+    </>
+
   );
 }
 

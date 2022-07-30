@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { useState } from "react";
-import { validationForm } from "../helpers/validation";
+import { useAuth } from "../context/auth-context";
+import { validationForm } from "../helpers/validationForm";
 import { colors } from "../styles/colors";
 import { typography } from "../styles/typography";
 import Button from "./Button";
@@ -41,40 +42,45 @@ const CustomButton = styled(Button)`
 `
 
 function Form() {
-
+  const { filter, currentUser } = useAuth();
   const [dataForm, setForm] = useState({
     dni: "",
     celular: "",
     placa: "",
     terminos: false,
   });
-
-
-
   const [errors, setErrors] = useState({})
 
   function handleFormChange(event) {
-    const { name, value } = event.target;
-    setForm({ ...dataForm, [name]: value });
-  }
-
-  function onChangeTerminos(event) {
-    const { id, checked } = event.target;
-    setForm({ ...dataForm, [id]: checked })
+    const { type, name, value, id, checked } = event.target;
+    if (type === "text") {
+      setForm({ ...dataForm, [name]: value });
+    }
+    if (type === "checkbox") {
+      setForm({ ...dataForm, [id]: checked })
+    }
   }
 
   function handleBlur(event) {
     handleFormChange(event);
-    console.log(dataForm)
     setErrors(validationForm(dataForm))
   }
 
 
+  function handleSubmit(event) {
+    event.preventDefault();
+    if (Object.keys(errors).length === 0) {
+      filter(dataForm);
+    } else {
+      return;
+    }
+  }
+
   console.log(dataForm)
-  console.log(errors)
+
   return (
     <>
-      <StyledForm onSubmit={handleFormChange}>
+      <StyledForm onSubmit={handleSubmit}>
         <FormTitle>Dejanos tus datos</FormTitle>
         <InputWrapper>
           <Selects
@@ -108,7 +114,9 @@ function Form() {
           label="Acepto la Política de Protecciòn de Datos Personales y los Términos y Condiciones."
           id="terminos"
           checked={dataForm.terminos}
-          onChange={onChangeTerminos}
+          onChange={handleFormChange}
+          onBlur={handleBlur}
+          error={errors.terminos}
         />
         <CustomButton isFullWidth>Cotízalo</CustomButton>
       </StyledForm>
