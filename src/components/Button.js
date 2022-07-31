@@ -32,9 +32,12 @@ const StyledButton = styled.button`
   } */
 `;
 
-function Button({ ...props }) {
+function Button({ icon, ...props }) {
   return (
-    <StyledButton {...props} />
+    <StyledButton {...props}>
+      {icon}
+      {props.children}
+    </StyledButton>
   );
 }
 

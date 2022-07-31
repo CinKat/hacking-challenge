@@ -1,5 +1,6 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
+import ShowPlan from "./pages/ArmaTuPlan";
 import Login from "./pages/Login";
 
 
@@ -13,7 +14,7 @@ function App() {
           <Route index element={<Navigate to="/login" />} />
           <Route path="*" element={<Navigate to="/login" />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/armatuplan" element={<p>Arma tu plan</p>} />
+          <Route path="/armatuplan" element={<ShowPlan />} />
         </Routes>
       </BrowserRouter>
     </>

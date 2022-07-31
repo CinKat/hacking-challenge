@@ -40,7 +40,7 @@ const Text = styled.p`
     ${typography.button.button_12};
   }
 `
-const Title = styled.h2`
+export const Title = styled.h2`
   ${typography.title.m_regular_28};
   letter-spacing: -0.03rem;
   color: ${colors.gray[300]};

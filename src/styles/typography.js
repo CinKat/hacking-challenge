@@ -29,13 +29,17 @@ export const typography = {
   },
 
   paragraph: {
+    regular_12: `
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    `,
     regular_14: `
     font-size: 0.87rem;
     line-height: 1.5rem;
     `,
-    regular_12: `
-    font-size: 0.75rem;
-    line-height: 1.25rem;
+    regular_16: `
+    font-size: 1rem;
+    line-height: 1.75rem;
     `,
   },
 
