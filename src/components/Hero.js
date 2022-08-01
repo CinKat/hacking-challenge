@@ -28,7 +28,7 @@ const HeroWrap = styled.section`
     padding: 2rem 4rem;
   }
 `
-const Text = styled.p`
+export const TextBold = styled.p`
   ${typography.title.bold_10};
   text-transform: uppercase;
   letter-spacing: 0.05rem;
@@ -52,7 +52,7 @@ export const Title = styled.h2`
 const StyledTitle = styled(Title)`
   color: ${colors.red[500]};
 `
-const Paragraph = styled.p`
+export const Paragraph = styled.p`
   font-family: ${fonts.secondary};
   ${typography.paragraph.regular_14};
   color: ${colors.gray[200]};
@@ -61,7 +61,7 @@ function Hero() {
   return (
     <HeroWrap>
       <div>
-        <Text>¡Nuevo!</Text>
+        <TextBold>¡Nuevo!</TextBold>
         <div>
           <Title>Seguro Vehicular</Title>
           <StyledTitle>Tracking</StyledTitle>

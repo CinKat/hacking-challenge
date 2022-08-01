@@ -20,13 +20,13 @@ const Range = styled.p`
   color:${colors.gray[200]};
   padding-bottom: 1rem;
 `
-const CustomButton = styled.button`
+export const CustomButton = styled.button`
   background-color: transparent;
   border: none;
 `
 const StyleCount = styled.div`
   display: flex;
-  gap: 4rem;
+  justify-content: space-between;
   border: 1px solid ${colors.gray[500]};
   padding: 1rem 1rem;
   /* width: fit-content; */

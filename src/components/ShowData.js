@@ -11,6 +11,7 @@ const Subtitle = styled.p`
 `
 export const Text = styled.p`
   ${typography.title.regular_16};
+  color: ${colors.gray[300]};
   letter-spacing: 0.2px;
 `
 const StyleSubtitle = styled(Subtitle)`

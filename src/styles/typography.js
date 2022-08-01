@@ -18,6 +18,10 @@ export const typography = {
     font-size: 1.5rem;
     line-height: 2rem;
     `,
+    regular_20: `
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    `,
     regular_16: `
     font-size: 1rem;
     line-height: 1.5rem;
