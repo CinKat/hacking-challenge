@@ -1,22 +1,19 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import AuthenticatedApp from "./AuthenticatedApp";
 import Header from "./components/Header";
+import { useAuth } from "./context/auth-context";
 import ShowPlan from "./pages/ArmaTuPlan";
 import Login from "./pages/Login";
+import UnauthenticatedApp from "./UnauthenticatedApp";
 
 
 function App() {
-
+  const { currentUser } = useAuth();
+  console.log(currentUser)
   return (
     <>
       <Header />
-      <BrowserRouter>
-        <Routes>
-          <Route index element={<Navigate to="/login" />} />
-          <Route path="*" element={<Navigate to="/login" />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/armatuplan" element={<ShowPlan />} />
-        </Routes>
-      </BrowserRouter>
+      {currentUser ? <AuthenticatedApp /> : <UnauthenticatedApp />}
     </>
   );
 }

@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { useState } from "react";
 import { colors } from "../styles/colors";
 import { typography } from "../styles/typography";
 import { Text } from "./ShowData";
@@ -30,7 +29,6 @@ const StyleCount = styled.div`
   border: 1px solid ${colors.gray[500]};
   padding: 1rem 1rem;
   border-radius: 0.25rem;
-  /* width: fit-content; */
 `
 
 function Count({ count, increment, decrement }) {

@@ -1,8 +1,7 @@
 import styled from "@emotion/styled";
 import { useCallback, useState } from "react";
 import Count from "../components/Count";
-import { Paragraph, TextBold } from "../components/Hero";
-import ShowData, { Text } from "../components/ShowData";
+import ShowData from "../components/ShowData";
 import ShowHidenPlan from "../components/ShowHidenPlan";
 import { useAuth } from "../context/auth-context";
 import { colors } from "../styles/colors";

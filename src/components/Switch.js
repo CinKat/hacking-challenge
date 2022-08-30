@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { useState } from "react";
 import { colors } from "../styles/colors";
 
 const StyledSwitch = styled.label`
@@ -49,7 +48,6 @@ const Checkbox = styled.input`
 `
 
 function Switch({ onChange, toggled, disabled }) {
-  console.log(disabled)
   return (
     <StyledSwitch>
       <Checkbox type='checkbox' onChange={onChange} checked={toggled} disabled={disabled} />
