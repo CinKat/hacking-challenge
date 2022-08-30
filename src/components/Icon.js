@@ -6,6 +6,7 @@ const IconStyled = styled.img`
 `
 
 function Icon({ icon, ...props }) {
+
   return (
     <>
       <IconStyled src={icon} {...props} />

@@ -30,6 +30,7 @@ export const typography = {
     font-size: 0.6rem;
     line-height: 1rem;
     `,
+
   },
 
   paragraph: {

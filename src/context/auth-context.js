@@ -24,8 +24,6 @@ function AuthProvider({ children }) {
     return user;
   }
 
-  console.log(currentUser)
-
   return (
     <AuthContext.Provider
       value={{

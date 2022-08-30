@@ -29,32 +29,22 @@ const StyleCount = styled.div`
   justify-content: space-between;
   border: 1px solid ${colors.gray[500]};
   padding: 1rem 1rem;
+  border-radius: 0.25rem;
   /* width: fit-content; */
 `
 
-function Count() {
-  const [count, setCount] = useState(12500);
-  function increment() {
-    if (count < 16500) {
-      setCount(count + 100)
-    }
-  }
-
-  function decrement() {
-    if (count > 12500) {
-      setCount(count - 100)
-    }
-  }
+function Count({ count, increment, decrement }) {
 
   return (
     <>
       <>
         <Text>Indica la suma asegurada</Text>
-        <Range>Min $12.500 &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; Max $16.500</Range>
+        <Range>Min $12.500 &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; Max $16,500</Range>
       </>
       <StyleCount>
         <CustomButton onClick={decrement}>{remove}</CustomButton>
         <Text>{`$ ${count / 1000}00`}</Text>
+        {/* <input type='number' value={`$ ${count / 1000}00`} placeholder={`$ ${count / 1000}00`}></input> */}
         <CustomButton onClick={increment}>{add}</CustomButton>
       </StyleCount>
     </>

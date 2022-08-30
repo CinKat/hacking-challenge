@@ -9,10 +9,11 @@ const Subtitle = styled.p`
   ${typography.paragraph.regular_16};
   color: ${colors.gray[200]};
 `
-export const Text = styled.p`
+export const Text = styled.h4`
   ${typography.title.regular_16};
   color: ${colors.gray[300]};
   letter-spacing: 0.2px;
+  font-weight: normal;
 `
 const StyleSubtitle = styled(Subtitle)`
   ${typography.paragraph.regular_12};
