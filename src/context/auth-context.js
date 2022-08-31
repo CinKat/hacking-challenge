@@ -17,10 +17,12 @@ function AuthProvider({ children }) {
 
   function filterUser(dataform) {
     let user = users.filter((item) => (item.phone === dataform.celular));
-    const currentuser = user.map(element => {
-      return { ...element, placa: dataform.placa };
-    });
-    setCurrentUser(currentuser);
+    if (user.length >= 1) {
+      const currentuser = user.map(element => {
+        return { ...element, placa: dataform.placa };
+      });
+      setCurrentUser(currentuser);
+    }
     return user;
   }
 

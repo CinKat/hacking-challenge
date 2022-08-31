@@ -75,10 +75,7 @@ function Form() {
       let filterData = filter(dataForm);
       if (filterData.length < 1) {
         setErrors({ ...errors, form: "Los datos ingresados no son correctos" })
-      } else {
-        navigate("/armatuplan")
       }
-
     } else {
       return;
     }
