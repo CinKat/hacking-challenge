@@ -1,5 +1,5 @@
 
-const BASE_URI = "https://jsonplaceholder.typicode.com";
+const BASE_URI = process.env.REACT_APP_BASE_URI;
 const tokenKey = "";
 
 export default async function apiFetch(
