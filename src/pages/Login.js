@@ -16,10 +16,10 @@ const LoginWrapper = styled.div`
 const Container = styled.div`
   background-color:${colors.gray[400]};
   height:19.2rem;
-  /* width: 100%; */
   @media (min-width: 600px) {
     background-image:url(${Background});
     background-repeat: no-repeat;
+    background-size: 600px;
     height:100vh;
   }
 `

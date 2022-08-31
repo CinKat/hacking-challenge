@@ -1,5 +1,7 @@
 import styled from "@emotion/styled";
 import { colors } from "../styles/colors";
+import { typography } from "../styles/typography";
+import Button from "./Button";
 import { Paragraph } from "./Hero";
 import Show from "./Show";
 import { Text } from "./ShowData";
@@ -39,7 +41,21 @@ const ContainerGrid = styled.div`
     grid-area: footer;
   }
 `
-
+const ContainerPrice = styled.section`
+  display: flex;
+  justify-content: space-between;
+  padding: 6rem 0 1rem 1rem;
+`
+const Number = styled.section`
+  ${typography.title.m_regular_24};
+  letter-spacing: -0.2px;
+  color: ${colors.gray[300]};
+`
+const TextSmall = styled.p`
+  ${typography.title.bold_10};
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+`
 
 function List({ plan, count, onChangePlan }) {
   const priceTotal = calculatePrice();
@@ -80,7 +96,13 @@ function List({ plan, count, onChangePlan }) {
           <Show onClick={() => { showText(item) }} show={item.show} />
         </ContainerGrid>
       ))}
-      <h2>{priceTotal}</h2>
+      <ContainerPrice>
+        <div>
+          <Number>{`$${priceTotal}.00`}</Number>
+          <TextSmall>Mensual</TextSmall>
+        </div>
+        <Button>Lo quiero</Button>
+      </ContainerPrice>
     </WrapperList>
   )
 }

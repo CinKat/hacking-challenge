@@ -7,7 +7,7 @@ import ImgDesktop from "../assets/img/img-desktop.png";
 const MainImage = styled.div`
   background-image:url(${ImgMobile});
   background-repeat: no-repeat;
-  background-position: right -0.125rem;
+  background-position: right top;
   height: 25rem;
   min-width: 35%;
   @media (min-width: 600px) {
@@ -15,6 +15,7 @@ const MainImage = styled.div`
     background-position: center center;
     width: 320px;
     height: 250px;
+    padding: 9.1rem;
   }
 `
 const HeroWrap = styled.section`
@@ -25,7 +26,7 @@ const HeroWrap = styled.section`
     flex-direction: column-reverse;
     align-items: center;
     gap: 1.5em;
-    padding: 2rem 4rem;
+    padding: 6rem 7rem 0 10rem;
   }
 `
 export const TextBold = styled.p`

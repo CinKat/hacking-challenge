@@ -9,7 +9,6 @@ import UnauthenticatedApp from "./UnauthenticatedApp";
 
 function App() {
   const { currentUser } = useAuth();
-  console.log(currentUser)
   return (
     <>
       <Header />

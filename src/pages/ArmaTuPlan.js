@@ -127,7 +127,7 @@ const initialPlanes = [
     name: "Protege a los que te rodean",
     options: [
       {
-        name: "lista de protegen los que te rodean",
+        name: "Protege a los que te rodean",
         description: "He salido de casa a las cuatro menos cinco para ir a la academia de ingles de mi pueblo (Sant Cugat, al lado de Barcelona) con mi bici, na llego a la academia que está en el centro del pueblo en una plaza medio-grande y dejo donde siempre la bici atada con una pitón a un sitio de esos de poner las bicis y mucho más",
         image: <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g mask="url(#mask0_2603_1308)">
@@ -233,8 +233,6 @@ function ShowPlan() {
         <ShowHidenPlan count={count} planes={planes} onChangePlan={handleChangePlan} />
       </Container>
     </>
-
-
   )
 }
 
